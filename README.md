@@ -51,6 +51,10 @@ In secrets.json, fill out your project id and wallet key. It look like below.
 >deploy in Rinkeby 
 >```
 >yarn hardhat run --network rinkeby scripts/1.deploy_mystorage.js
+```
+>Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
+> Upgrade
+```
 >yarn hardhat run --network rinkeby scripts/2.deploy_mystorageV2.js 
 >```
 
