@@ -40,7 +40,7 @@ create a secrets.json
 ```
 touch secrets.json
 ```
-fill out your project id and wallet key
+In secrets.json, fill out your project id and wallet key. It look like below.   
 >>{    
     "rinkebyApiKey": "https://rinkeby.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
     "goerliApiKey": "https://goerli.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
