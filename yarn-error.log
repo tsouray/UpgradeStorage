@@ -1,0 +1,56 @@
+Arguments: 
+  /Users/rayt/.nvm/versions/node/v16.14.1/bin/node /Users/rayt/.nvm/versions/node/v16.14.1/bin/yarn add @nomiclabs/hardhat-etherscan‌ -D
+
+PATH: 
+  /Users/rayt/.nvm/versions/node/v16.14.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/rayt/.cargo/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  TypeError [ERR_UNESCAPED_CHARACTERS]: https://registry.yarnpkg.com/@nomiclabs%2fhardhat-etherscan‌: Request path contains unescaped characters
+      at new NodeError (node:internal/errors:371:5)
+      at new ClientRequest (node:_http_client:154:13)
+      at Object.request (node:https:353:10)
+      at Request.module.exports.Request.start (/Users/rayt/.nvm/versions/node/v16.14.1/lib/node_modules/yarn/lib/cli.js:141445:32)
+      at Request.module.exports.Request.end (/Users/rayt/.nvm/versions/node/v16.14.1/lib/node_modules/yarn/lib/cli.js:142204:10)
+      at end (/Users/rayt/.nvm/versions/node/v16.14.1/lib/node_modules/yarn/lib/cli.js:141258:14)
+      at Immediate.<anonymous> (/Users/rayt/.nvm/versions/node/v16.14.1/lib/node_modules/yarn/lib/cli.js:141272:7)
+      at processImmediate (node:internal/timers:466:21)
+
+npm manifest: 
+  {
+    "name": "mysample",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@nomiclabs/hardhat-ethers": "^2.0.6",
+      "@nomiclabs/hardhat-waffle": "^2.0.3",
+      "chai": "^4.3.6",
+      "ethereum-waffle": "^3.4.4",
+      "ethers": "^5.6.6",
+      "hardhat": "^2.9.6"
+    },
+    "dependencies": {
+      "create-react-app": "^5.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
