@@ -1,59 +1,56 @@
-# UpgradeStorage
-Use openzeppelin Upgrades Plugins and zksnark
+# Circom & snarkjs 
 
-## Git Clone
+## Compile 
 ```
-git clone https://github.com/tsouray/UpgradeStorage.git
-```
-## Setup
-```
-cd UpgradeStorage
-yarn
-```
-## Compile
-```
-yarn hardhat compile
+circom circuit.circom --r1cs --wasm --sym
 ```
 
-## Deploy - Localhost
-> Deploy proxy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
-> ```
-> yarn hardhat run --network localhost scripts/1.deploy_mystorage.js
-> ```
-> Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
-> ```
->  const proxyAddress = '0x9d2D20B332bd1b0441e47CC3D5c989B98df7D92B' 
-> ```
-> Upgrade 
-> ```
-> yarn hardhat run --network localhost scripts/2.deploy_mystorageV2.js 
-> ```
-  
-## Testing
-> ```
-> yarn hardhat test --network localhost test/1.myStorage.proxy-test.js 
-> yarn hardhat test --network localhost test/2.myStorage.proxy-test.js 
-> ```
+## Trust Setup 
+>>> New Powers of tau ceremony:
+>>> ```
+>>> snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
+>>> ```
+>>> Contribute to the ceremony:
+>>> ```
+>>> snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
+>>> ```
+>>> Prepare phase 2 :
+>>> ```
+>>> snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
+>>> ```
+>>> Creates an initial Groth16 pkey:
+>>> ```
+>>> snarkjs g16s circuit.r1cs pot12_final.ptau circuit_final.zkey
+>>> ```
+>>> Exports a verification key:
+>>> ```
+>>> snarkjs zkev circuit_final.zkey verification_key.json
+>>> ```
 
-## Deploy - Testing network
-create a secrets.json
+## Computing the witness with WebAssembly
+create a input.json
+>>>```
+>>>touch input.json
+>>>```
+>>>Edit input.json
+>>>Generate Witness:
+>>>```
+>>>cd circuit_js
+>>>node generate_witness.js circuit.wasm ../input.json ../witness.wtns
+>>>```
+
+## Generating a Proof
 ```
-touch secrets.json
+snarkjs g16p circuit_final.zkey witness.wtns proof.json public.json
 ```
-In secrets.json, fill out your project id and wallet key. It look like below.   
->>{    
-    "rinkebyApiKey": "https://rinkeby.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
-    "goerliApiKey": "https://goerli.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
-    "etherscanApiKey": "YDXXXXXXXXXXXXXXXXXXXXXXXX",    
-    "my_private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    
-}    
-
->deploy in Rinkeby 
->```
->yarn hardhat run --network rinkeby scripts/1.deploy_mystorage.js
->yarn hardhat run --network rinkeby scripts/2.deploy_mystorageV2.js 
->```
-
+## Verify Proof
+```
+snarkjs g16v verification_key.json public.json proof.json
+```
+## generate Solidity verifier file
+```
+snarkjs zkesv circuit_final.zkey verifier.sol
+```
 
 
 
