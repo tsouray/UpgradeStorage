@@ -11,7 +11,7 @@ yarn hardhat compile
 ```
 
 ## Deploy
-> Deploy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
+> Deploy proxy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
 > ```
 > yarn hardhat run --network localhost scripts/1.deploy_mystorage.js
 > ```
