@@ -41,12 +41,12 @@ create a secrets.json
 touch secrets.json
 ```
 fill out your project id and wallet key
->>{
-    "rinkebyApiKey": "https://rinkeby.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",
-    "goerliApiKey": "https://goerli.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",
-    "etherscanApiKey": "YDXXXXXXXXXXXXXXXXXXXXXXXX",
-    "my_private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-}
+>>{    
+    "rinkebyApiKey": "https://rinkeby.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
+    "goerliApiKey": "https://goerli.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXXX",    
+    "etherscanApiKey": "YDXXXXXXXXXXXXXXXXXXXXXXXX",    
+    "my_private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".   
+}    
 
 >deploy in Rinkeby 
 >```
