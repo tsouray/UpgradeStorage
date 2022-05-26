@@ -70,6 +70,7 @@ const App = () => {
     const accountList = await provider.listAccounts()
     console.log(accountList)
     accountHandler(accountList[0])
+    handleRetrieveDeviceData()    // get Device data from smart contract
     setConnected(true)
   }
 
@@ -171,7 +172,7 @@ const App = () => {
   }
 
   const handleRetrieveDeviceData = async () => {
-    console.log('get data')
+    //console.log('get data')
     const myStorageContract = new ethers.Contract(
       myStorageAddress,
       myStorageAbi,
@@ -179,6 +180,9 @@ const App = () => {
     )
     const deviceInfo = await myStorageContract.getData()
     setDeviceArray([deviceInfo[0].toNumber(),deviceInfo[1].toNumber(),deviceInfo[2].toNumber()] )
+    if(deviceInfo[0].toNumber() != 0){
+      setInputArray([deviceInfo[0].toNumber(),deviceInfo[2].toNumber()])
+    }
   }
 
   return (
