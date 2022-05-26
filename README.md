@@ -64,7 +64,7 @@ In secrets.json, fill out your project id and wallet key. It look like below.
 >cd frontend
 >yarn
 >```
->modify App.js
+>modify frontend/src/App.js
 >>NOTE: Make sure to change this to the contract address you deployed.    
 >>const myStorageAddress = '0x9d2D20B332bd1b0441e47CC3D5c989B98df7D92B' // proxy Address      
 
