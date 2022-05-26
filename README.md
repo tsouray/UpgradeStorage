@@ -35,7 +35,7 @@ yarn hardhat compile
 > yarn hardhat test --network localhost test/2.myStorage.proxy-test.js 
 > ```
 
-## Deploy - Testing network
+## Deploy - Testing Rinkeby network
 create a secrets.json
 ```
 touch secrets.json
@@ -58,7 +58,19 @@ In secrets.json, fill out your project id and wallet key. It look like below.
 > yarn hardhat run --network rinkeby scripts/2.deploy_mystorageV2.js 
 > ```
 
-
+## Frontend
+>install package
+>```
+>cd frontend
+>yarn
+>```
+>run web serve
+>```
+>yarn start
+>```
+>http://localhost:3000/
+>[!image]()
+>
 
 
 
