@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import './App.css'
-import MyStorage from './artifacts/contracts/MyStorage.sol/MyStorage.json'
-import MyStorageV2 from './artifacts/contracts/MyStorageV2.sol/MyStorageV2.json'
+//import MyStorage from './artifacts/contracts/MyStorage.sol/MyStorage.json'
+//import MyStorageV2 from './artifacts/contracts/MyStorageV2.sol/MyStorageV2.json'
+import MyStorage from './artifacts/contracts/MyStorageV2.sol/MyStorageV2.json'
+
 import { joinSignature } from 'ethers/lib/utils'
 
 // NOTE: Make sure to change this to the contract address you deployed
 const myStorageAddress = '0x9d2D20B332bd1b0441e47CC3D5c989B98df7D92B'
 // ABI so the web3 library knows how to interact with our contract
 const myStorageAbi = MyStorage.abi
-const myStorageAbiV2 = MyStorageV2.abi
+//const myStorageAbiV2 = MyStorageV2.abi
 
 // NOTE: checkout the API for ethers.js here: https://docs.ethers.io/v5/api/
 // TIP: Remember to console.log something if you are unsure of what is being returned
@@ -126,7 +128,7 @@ const App = () => {
     // create instance of contract using our contract address, abi, and provider
     const contract = new ethers.Contract(
       myStorageAddress,
-      myStorageAbiV2,
+      myStorageAbi,
       provider
     )
 
