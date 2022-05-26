@@ -37,7 +37,7 @@ yarn hardhat compile
 > ```
 
 ## Deploy - Testing Rinkeby network
-create a secrets.json
+Create a secrets.json (It's for hardhat.config.js to read secrets information.)     
 ```
 touch secrets.json
 ```
@@ -49,12 +49,12 @@ In secrets.json, fill out your project id and wallet key. It look like below.
     "my_private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    
 }    
 
->deploy in Rinkeby 
+> 1. Deploy proxy in Rinkeby: 
 > ```
 > yarn hardhat run --network rinkeby scripts/1.deploy_mystorage.js
 > ```
-> Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
-> Upgrade
+> 2. Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
+> 3. Upgrade:
 > ```
 > yarn hardhat run --network rinkeby scripts/2.deploy_mystorageV2.js 
 > ```
