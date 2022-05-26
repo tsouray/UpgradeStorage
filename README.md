@@ -5,17 +5,17 @@ Use openzeppelin Upgrades Plugins and zksnark
 ```
 git clone https://github.com/tsouray/UpgradeStorage.git
 ```
-## Setup
+## Setup project
 ```
 cd UpgradeStorage
 yarn
 ```
-## Compile
+## Compile smart contracts
 ```
 yarn hardhat compile
 ```
 
-## Deploy - Localhost
+## Deploy smart contracts - Localhost
 > Deploy proxy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
 > ```
 > yarn hardhat run --network localhost scripts/1.deploy_mystorage.js
@@ -29,7 +29,7 @@ yarn hardhat compile
 > yarn hardhat run --network localhost scripts/2.deploy_mystorageV2.js 
 > ```
   
-## Testing
+## Testing - Localhost
 > ```
 > yarn hardhat test --network localhost test/1.myStorage.proxy-test.js 
 > yarn hardhat test --network localhost test/2.myStorage.proxy-test.js 
