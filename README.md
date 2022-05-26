@@ -16,7 +16,8 @@ yarn hardhat compile
 ```
 
 ## Deploy smart contracts - Localhost
-> Deploy proxy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
+> ( **Turn on another terminal, change path to project then exectue : %yarn hardhat node** )
+> Deploy proxy in localhost 
 > ```
 > yarn hardhat run --network localhost scripts/1.deploy_mystorage.js
 > ```
