@@ -5,18 +5,19 @@ Use openzeppelin Upgrades Plugins and zksnark
 ```
 git clone https://github.com/tsouray/UpgradeStorage.git
 ```
-## Setup
+## Setup project
 ```
 cd UpgradeStorage
 yarn
 ```
-## Compile
+## Compile smart contracts
 ```
 yarn hardhat compile
 ```
 
-## Deploy - Localhost
-> Deploy proxy in localhost (turn on another terminal, change path to project then exectue : %yarn hardhat node)
+## Deploy smart contracts - Localhost
+> ( **Turn on another terminal, change path to project, then exectue : %yarn hardhat node** )    
+> Deploy proxy in localhost 
 > ```
 > yarn hardhat run --network localhost scripts/1.deploy_mystorage.js
 > ```
@@ -29,14 +30,14 @@ yarn hardhat compile
 > yarn hardhat run --network localhost scripts/2.deploy_mystorageV2.js 
 > ```
   
-## Testing
+## Testing - Localhost
 > ```
 > yarn hardhat test --network localhost test/1.myStorage.proxy-test.js 
 > yarn hardhat test --network localhost test/2.myStorage.proxy-test.js 
 > ```
 
 ## Deploy - Testing Rinkeby network
-create a secrets.json
+Create a secrets.json (It's for hardhat.config.js to read secrets information.)     
 ```
 touch secrets.json
 ```
@@ -48,12 +49,12 @@ In secrets.json, fill out your project id and wallet key. It look like below.
     "my_private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    
 }    
 
->deploy in Rinkeby 
+> 1. Deploy proxy in Rinkeby: 
 > ```
 > yarn hardhat run --network rinkeby scripts/1.deploy_mystorage.js
 > ```
-> Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
-> Upgrade
+> 2. Copy mystorage(proxy) address, then paste it to 2.deploy_mystorageV2.js
+> 3. Upgrade:
 > ```
 > yarn hardhat run --network rinkeby scripts/2.deploy_mystorageV2.js 
 > ```
